@@ -813,7 +813,7 @@ img{
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem 2rem 0 2rem;
   }
   .price__boton{
     color: var(--text-color);
@@ -1621,9 +1621,6 @@ img{
     .ventajas__icon{
         width:60px;
     }
-    .price__data{
-        min-width: 315px;
-    }
     .services__modal-service{
         font-size: var(--small-font-size);
     }
@@ -1652,6 +1649,14 @@ img{
 }
 
 @media screen and (max-width:350px){
+
+    .price__data{
+        max-width: 250px;
+    }
+    .container__web{
+        margin: 0 1rem 0 1rem;
+    }
+    
     .nav__menu{
         padding:2rem .5rem 4rem;
     }
@@ -1763,6 +1768,11 @@ img{
 }
 
 @media screen and (min-width:350px){
+
+    .container__web{
+        margin: 0 1rem 0 1rem;
+    }
+    
     .section3{
         padding: 4rem 0 4rem 0;
     }
@@ -2139,7 +2149,6 @@ img{
     .footer__copy{
         margin-top: 4.5rem;
     }
-
 }
 
 /* Para dispositivos grandes */
@@ -2174,6 +2183,7 @@ img{
         max-width: 968px;
         
     }
+   
     .home__container{
         padding-top: 8rem;
     }

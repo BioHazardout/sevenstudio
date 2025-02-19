@@ -1144,11 +1144,11 @@ img{
     margin: 1rem 0;
   }
   .price__condition{
-   display: block;
+    display: block;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 2rem;
+    margin: 2rem 2rem 0 2rem;
   }
   .price__boton{
     color: var(--text-color);
