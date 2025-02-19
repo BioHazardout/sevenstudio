@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="tuerca" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 129.1 79.7" style="enable-background:new 0 0 129.1 79.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}
+	.st3{fill:url(#SVGID_4_);}
+	.st4{fill:#CC2543;}
+	.st5{fill:#9A1743;}
+	.st6{fill:#FFC788;}
+</style>
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="58.9065" y1="66.548" x2="58.9065" y2="80.6244" gradientTransform="matrix(0.9926 0.1211 0.1211 -0.9926 -30.304 77.7162)">
+		<stop  offset="0" style="stop-color:#9A1743"/>
+		<stop  offset="1" style="stop-color:#C73E2C"/>
+	</linearGradient>
+	<path class="st0" d="M41.5,10.4L41.5,10.4c0-0.2-0.1-0.4-0.1-0.5l0,0l0.9-1.5l-0.7-1l-0.7-1l-1.4,0.7l0,0c-0.1-0.1-0.3-0.2-0.4-0.3
+		l0,0L38.9,5l-1.1-0.1l-1-0.2l-0.6,1.7l0,0c-0.2,0-0.3,0.1-0.4,0.2l0,0l-1.2-1l-0.9,0.8l-0.9,0.8l-1.2,2.5L31.4,11l-0.2,1.3l0.7,0.4
+		l-0.1,0.5c0,0.2,0.4,0.8,0.4,1l0.1,0.1l-0.5,0.9l0.7,1l0.7,1l1.4-0.7l0,0c0.1,0.1,0.3,0.2,0.4,0.3l0,0l0.2,1.8l1.1,0.1l1.1,0.1
+		l0.6-1.7l0,0c0.2,0,0.3-0.1,0.4-0.2l0,0l1.2,1l0.9-0.9l0.9-0.9l-0.6-1.4l0,0c0.1-0.2,0.2-0.3,0.2-0.5l0,0l1.5-0.4l0.2-1.3l0.2-1.3
+		L41.5,10.4z M36.5,16.1c-1.9-0.2-3.2-2.3-2.9-4.7s2.1-4.1,4-3.9c1.9,0.2,3.2,2.3,2.9,4.7S38.5,16.3,36.5,16.1z"/>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="57.4248" y1="66.4491" x2="57.4248" y2="81.066" gradientTransform="matrix(0.9926 0.1211 0.1211 -0.9926 -30.304 77.7162)">
+		<stop  offset="1.984140e-03" style="stop-color:#E03347"/>
+		<stop  offset="1" style="stop-color:#FF6E27"/>
+	</linearGradient>
+	<path class="st1" d="M40.2,10L40.2,10c0-0.2-0.1-0.4-0.1-0.6l0,0L41,7.8l-0.7-1.1l-0.7-1.1l-1.4,0.7l0,0c-0.1-0.1-0.3-0.2-0.4-0.3
+		l0,0l-0.2-1.8l-1.1-0.1L35.4,4l-0.6,1.8l0,0c-0.2,0-0.3,0.1-0.5,0.2l0,0l-1.2-1l-0.9,0.9l-0.9,0.9l0.5,1.7l0,0
+		c-0.1,0.2-0.2,0.3-0.2,0.5l0,0l-1.5,0.4l-0.3,1.3l-0.2,1.4l1.4,0.7l0,0c0,0.2,0.1,0.4,0.1,0.6l0,0L30.2,15l0.7,1.1l0.7,1.1l1.4-0.7
+		l0,0c0.1,0.1,0.3,0.2,0.4,0.3l0,0l0.2,1.8l1.1,0.1l1.1,0.1l0.7-1.7l0,0c0.2,0,0.3-0.1,0.5-0.2l0,0l1.2,1l0.9-0.9l0.9-0.9l-0.5-1.7
+		l0,0c0.1-0.2,0.2-0.3,0.2-0.5l0,0l1.5-0.4l0.2-1.4l0.2-1.4L40.2,10z M35.1,15.9c-2-0.2-3.3-2.4-3-4.9s2.1-4.3,4.1-4
+		c2,0.2,3.3,2.4,3,4.9C38.9,14.3,37.1,16.1,35.1,15.9z"/>
+	
+		<radialGradient id="SVGID_3_" cx="59.9791" cy="76.6853" r="3.9603" gradientTransform="matrix(0.9926 0.1211 0.1211 -0.9926 -30.304 77.7162)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#C73E2C"/>
+		<stop  offset="1" style="stop-color:#9A1743"/>
+	</radialGradient>
+	<path class="st2" d="M39.2,11.9c-0.3,2.5-2,4.3-3.9,4c-0.1,0-0.2,0-0.2,0c-1.7-0.4-2.8-2.4-2.6-4.6c-0.2,1.9,0.8,3.6,2.3,3.7
+		c1.5,0.2,2.9-1.3,3.1-3.3c0.2-2-0.8-3.7-2.2-3.9s-2.8,1.2-3.1,3.1C32.9,8.6,34.5,7,36.2,7c0.1,0,0.2,0,0.2,0
+		C38.3,7.3,39.5,9.4,39.2,11.9z"/>
+	
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="57.2284" y1="69.2733" x2="57.2284" y2="78.2431" gradientTransform="matrix(0.9926 0.1211 0.1211 -0.9926 -30.304 77.7162)">
+		<stop  offset="1.984140e-03" style="stop-color:#E03347"/>
+		<stop  offset="1" style="stop-color:#FF9027"/>
+	</linearGradient>
+	<path class="st3" d="M36.2,7C36.1,7,36,7,36,7c-1.8-0.2-3.6,1.6-3.9,4c-0.3,2.5,0.9,4.6,2.8,4.9c0.1,0,0.2,0,0.2,0
+		c1.8,0.1,3.4-1.7,3.6-4.1C39,9.5,37.9,7.4,36.2,7z M34.8,15c-1.4-0.2-2.4-1.8-2.3-3.7c0-0.1,0-0.1,0-0.2c0-0.1,0-0.1,0-0.2
+		c0.3-1.9,1.7-3.2,3.1-3.1c1.5,0.2,2.5,1.9,2.2,3.9C37.7,13.7,36.3,15.2,34.8,15z"/>
+	<polygon class="st4" points="39.7,5.7 41,6.3 42.3,8.4 41,7.9 	"/>
+	<polygon class="st5" points="40.1,9.5 41.4,9.9 42.3,8.4 41,7.9 	"/>
+	<polygon class="st5" points="42.5,13.8 41.3,13.6 39.8,13.9 39.5,14.4 40.8,14.7 41.1,14.2 	"/>
+	<polygon class="st5" points="40.1,9.5 40.2,10 41.5,10.4 41.4,9.9 	"/>
+	<polygon class="st4" points="41.3,16.4 40,16.2 39.5,14.4 40.8,14.7 	"/>
+	<polygon class="st5" points="39.6,18.1 38.2,18 40,16.2 41.3,16.4 	"/>
+	<polygon class="st5" points="37.3,18.9 35.9,18.8 36.5,17.1 37.8,17.6 	"/>
+	<polygon class="st5" points="33.5,17.1 33.1,17.3 31.6,17.2 33,16.4 33.4,16.7 	"/>
+	<polygon class="st4" points="33.1,4.9 34.9,5.4 34.8,5.8 34.3,6 	"/>
+	<polygon class="st5" points="37.6,4.3 39,4.9 39.1,6 38.3,6.5 37.9,6.2 	"/>
+	<path class="st6" d="M37.4,7.7l0.5,0.1c0,0,0.6,0.6,0.8,1.1h-0.5C38.3,8.8,37.9,8,37.4,7.7z"/>
+	<polygon class="st6" points="38.6,9.7 39,9.7 39.1,10 38.7,10.1 	"/>
+</g>
+</svg>
