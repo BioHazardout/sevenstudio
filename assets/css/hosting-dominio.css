@@ -1846,6 +1846,10 @@ img{
         margin-left: auto;
         margin-right: auto;
     }
+    .container__web{
+        margin-left: auto;
+        margin-right: auto;
+    }
     body{
         margin: 0;
     }
@@ -2243,6 +2247,9 @@ img{
     .container{
         max-width: 1080px;
     }
+    .container__web{
+        max-width: 1200px;
+    }
     .section2{
         padding: 6rem 0 6rem 0;
     }
@@ -2270,7 +2277,7 @@ img{
         max-width: 1200px;
     }
     .container__web{
-        max-width: 1350px;
+        max-width: 1280px;
     }
     .section3{
         padding: 10rem 0 12rem 0;
