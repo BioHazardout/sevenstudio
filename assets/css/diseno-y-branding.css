@@ -500,6 +500,7 @@ img{
 }
 .home__social-icon:hover{
     color: var(--primary-color-degraded);
+    fill: var(--primary-color-degraded);
 }
 
 .home__data{
@@ -1268,13 +1269,24 @@ img{
     width: 90px;
 }
 
+.footer__socials{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    
+}
+
 .footer__social{
     font-size: 1.3rem;
     margin-right: var(--mb-1-5);
+
 }
+
 .footer__social:hover{
     color: var(--primary-color);
+    fill: var(--primary-color);
+    
 }
+
 .footer__copy{
     font-size: var(--smaller-font-size);
     text-align: center;
@@ -2152,6 +2164,11 @@ img{
     }
     .services__circle{
         top: -15px;
+    }
+    .footer__socials{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        
     }
     
 }
