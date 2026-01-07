@@ -1096,3 +1096,35 @@
         <script src="assets/js/pages.js"></script>
     </body>
 </html>
+
+function gemini_boton_whatsapp_producto_v19() {
+    
+    // --- 1. CONFIGURACIÓN ---
+    $telefono = '+51984228152'; 
+    $cantidad_minima_mayorista = 3; 
+
+    // ==========================================
+    //       ZONA DE REGLAS DE DESCUENTO
+    // ==========================================
+
+    // --- 2.1 EXCEPCIONES POR PRODUCTO (ID) ---
+    // Aquí pones el ID del producto específico => y su descuento único.
+    // Esto tiene prioridad sobre la categoría.
+    $excepciones_productos = array(
+        6007 => 3.00,  // Neru M. Cero Biker descuenta 3 soles
+        6088 => 3.00,  // NERU M. CORTA BIKER descuenta 3 soles
+		
+        // Agrega más líneas así: ID => Descuento,
+    );
+
+    // --- 2.2 REGLAS GENERALES POR CATEGORÍA (SLUG) ---
+    // Esto aplica si el producto NO está en la lista de arriba.
+    $reglas_categoria = array(
+        'enterizos' => 3.00,
+		'conjuntos'=> 3.00;
+		'complementos'=> 3.00;
+		'tops-y-polos'=> 3.00;
+		'zapatillas'=> 3.00;
+		'pants'=> 3.00;
+  
+    );
