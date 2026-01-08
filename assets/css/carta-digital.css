@@ -907,13 +907,13 @@ img{
   .price__data-description a{
     margin: 1rem 0;
   }
-  .price__condition{
-   display: block;
+  .price__condition {
+    display: block;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin-top: 2rem;
-  }
+    margin: 2rem 2rem 0 2rem;
+}
   .price__boton{
     color: var(--text-color);
     font-weight: 600;
@@ -1609,6 +1609,9 @@ grid-template-columns: 1fr 9fr;
 }
 
 @media screen and (min-width:350px){
+    .container__web{
+        margin: 0 1rem 0 1rem;
+    }
     .section3{
         padding: 4rem 0 4rem 0;
     }
