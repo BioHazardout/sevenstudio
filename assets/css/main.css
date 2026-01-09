@@ -1798,6 +1798,9 @@ img{
     .home__description{
         margin-bottom: .75rem;
     }
+    .graphic{
+        width: 40%; 
+    }
     
     .benefies__container,
     .about__container,
@@ -1952,6 +1955,10 @@ img{
     }
     .home__scroll-button{
         margin-left: 3rem;
+    }
+    .graphic{
+        order: 1;
+        width: 400px; 
     }
     
     
@@ -2136,6 +2143,16 @@ img{
         font-size: 1.1rem;
         margin-bottom: 2rem;
     }
+
+    .graphic{
+        width: 500px; 
+    }
+
+    .graphic__circles {
+
+        top: 0 !important;
+        right:10% !important ;
+}
     .benefies .section__title,
     .about .section__title{
         padding: 0;
@@ -2234,12 +2251,16 @@ img{
     }
     
     .home__img{
-        width:500px;
-        bottom:160px;
+        width:600px;
+        bottom:200px;
     }
     .home__title{
         font-size: 3.4rem;
         line-height: 4.5rem;
+    }
+
+    .graphic{
+        width: 600px; 
     }
     
     .btn__change .button{
@@ -2297,3 +2318,53 @@ img{
         font-size: 1rem;
     }
   }
+
+
+  .graphic{
+    position: relative;
+    display:grid;
+    padding-top: 3rem;
+  }
+
+  .graphic__pc{
+    width: 100%;
+  }
+  .absolute{
+    position: absolute;
+
+
+  }
+  .graphic__circles{
+    height: 100%;
+    top: 5%;
+    right:5%;
+    aspect-ratio: 1/1;
+    mix-blend-mode: screen;
+  }
+ .graphic__circles img{
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+ }
+ .graphic__logo{
+    position: absolute;
+ }
+ .graphic__energy{
+    animation: turn1 10s linear infinite;
+ }
+ .graphic__circle_2{
+    animation: turn1 26s linear infinite;
+ }
+ @keyframes turn1{
+    to{
+        transform: rotate(1turn);
+    }
+ }
+ .graphic__circle_1{
+    animation: turn2 16s linear infinite;
+ }
+ @keyframes turn2{
+    to{
+        transform: rotate(-1turn);
+    }
+ }

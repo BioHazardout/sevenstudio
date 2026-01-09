@@ -264,7 +264,7 @@ themeButton.addEventListener('click', () => {
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 
 
-ScrollReveal().reveal('.home__data,.home__img, .home__social, .footer__copy', { origin: 'top',distance: '40px',duration: 2500,reset: false }),
+ScrollReveal().reveal('.home__data,.home__img, .home__social, .footer__copy, .graphic__pc, .graphic__circles', { origin: 'top',distance: '40px',duration: 2500,reset: false }),
 {
         interval: 100
     }
