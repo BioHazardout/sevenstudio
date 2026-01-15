@@ -1097,34 +1097,278 @@
     </body>
 </html>
 
-function gemini_boton_whatsapp_producto_v19() {
-    
-    // --- 1. CONFIGURACIÓN ---
-    $telefono = '+51984228152'; 
-    $cantidad_minima_mayorista = 3; 
-
-    // ==========================================
-    //       ZONA DE REGLAS DE DESCUENTO
-    // ==========================================
-
-    // --- 2.1 EXCEPCIONES POR PRODUCTO (ID) ---
-    // Aquí pones el ID del producto específico => y su descuento único.
-    // Esto tiene prioridad sobre la categoría.
-    $excepciones_productos = array(
-        6007 => 3.00,  // Neru M. Cero Biker descuenta 3 soles
-        6088 => 3.00,  // NERU M. CORTA BIKER descuenta 3 soles
-		
-        // Agrega más líneas así: ID => Descuento,
-    );
-
-    // --- 2.2 REGLAS GENERALES POR CATEGORÍA (SLUG) ---
-    // Esto aplica si el producto NO está en la lista de arriba.
-    $reglas_categoria = array(
-        'enterizos' => 3.00,
-		'conjuntos'=> 3.00;
-		'complementos'=> 3.00;
-		'tops-y-polos'=> 3.00;
-		'zapatillas'=> 3.00;
-		'pants'=> 3.00;
+function doGet(e) {
+  // Determinar qué función ejecutar basado en los parámetros
+  const action = e.parameter.action || 'products';
   
-    );
+  if (action === 'config') {
+    return getConfiguration();
+  } else if (action === 'recordOrder') {
+    return recordOrder(e);
+  } else {
+    return getProducts();
+  }
+}
+
+function doPost(e) {
+  // Reutilizar la misma lógica que doGet
+  return doGet(e);
+}
+
+function getProducts() {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = spreadsheet.getSheetByName('Productos') || spreadsheet.getActiveSheet();
+  var data = sheet.getDataRange().getValues();
+  
+  // Obtener la configuración para aplicarla a los productos
+  var configSheet = spreadsheet.getSheetByName('Config');
+  var config = {};
+  
+  if (configSheet) {
+    var configData = configSheet.getDataRange().getValues();
+    // Convertir los datos de configuración a un objeto
+    for (var i = 1; i < configData.length; i++) {
+      if (configData[i][0]) {
+        config[configData[i][0]] = configData[i][1];
+      }
+    }
+  }
+  
+  var products = [];
+  
+  // Asumiendo que la primera fila son los encabezados
+  var headers = data[0];
+  var visibleIndex = headers.indexOf('Visible');
+  
+  for (var i = 1; i < data.length; i++) {
+    var row = data[i];
+    if (!row[0]) continue; // Saltar filas vacías
+    
+    // Verificar si el producto debe ser visible
+    var isVisible = true; // Valor por defecto es TRUE
+    
+    if (visibleIndex !== -1) {
+      // Si la celda está en blanco o es TRUE, mostrar el producto
+      isVisible = row[visibleIndex] === "" || row[visibleIndex] === true || 
+                 row[visibleIndex] === "TRUE" || row[visibleIndex] === "true" || 
+                 row[visibleIndex] === undefined || row[visibleIndex] === null;
+      
+      // Solo saltar si explícitamente es FALSE
+      if (row[visibleIndex] === false || row[visibleIndex] === "FALSE" || row[visibleIndex] === "false") {
+        continue; // Saltar productos marcados explícitamente como no visibles
+      }
+    }
+    
+    var product = {
+      id: i,
+      titulo: row[0] || "",       // Columna A
+      imagen: row[1] || "",       // Columna B
+      precio: parseFloat(row[2]) || 0, // Columna C
+      
+      // --- CAMBIO: PRECIO ANTES EN COLUMNA D (row 3) ---
+      PrecioAntes: row[3] || "",  
+      // -------------------------------------------------
+
+      // --- CAMBIO: CATEGORIAS MOVIDAS A COLUMNA E (row 4) ---
+      categorias: (row[4] ? String(row[4]).split(',').map(function(item) { return item.trim(); }) : []),
+      // -----------------------------------------------------
+
+      // El resto sigue buscando por el nombre de la cabecera, así que no se rompe aunque se muevan
+      sku: row[headers.indexOf('SKU')] || "",
+      stock: parseInt(row[headers.indexOf('Stock')]) || 0,
+      subtitulo: row[headers.indexOf('Subtitulo')] || "",
+      descripcion: row[headers.indexOf('Descripcion')] || "",
+      popular: row[headers.indexOf('Popular')] || 0,
+      etiqueta: row[headers.indexOf('Etiqueta')] || "",
+      fecha: row[headers.indexOf('Fecha')] || new Date().toISOString(),
+      EsOferta: row[headers.indexOf('EsOferta')] || "",
+      galeria: row[headers.indexOf('Galeria')] ? String(row[headers.indexOf('Galeria')]).split(',').map(function(item) { return item.trim(); }) : [],
+      visible: isVisible 
+    };
+    
+    // Procesar atributos dinámicamente
+    var atributos = {};
+    for (var j = 0; j < headers.length; j++) {
+      // Si el encabezado comienza con "Atributo:"
+      if (headers[j].toString().startsWith('Atributo:')) {
+        var nombreAtributo = headers[j].toString().replace('Atributo:', '').trim();
+        
+        // Verificar si hay valores para este atributo
+        if (row[j]) {
+          // Dividir por ',' y luego procesar cada valor para detectar formato "valor|precio"
+          var valores = String(row[j]).split(',').map(function(item) {
+            var partes = item.trim().split('|');
+            if (partes.length > 1) {
+              return {
+                valor: partes[0].trim(),
+                precio: parseFloat(partes[1].trim()) || 0
+              };
+            } else {
+              return {
+                valor: partes[0].trim(),
+                precio: 0
+              };
+            }
+          });
+          
+          atributos[nombreAtributo] = valores;
+        }
+      }
+    }
+    
+    product.atributos = atributos;
+    products.push(product);
+  }
+  
+  var response = {
+    products: products,
+    config: config
+  };
+  
+  return ContentService.createTextOutput(JSON.stringify(response))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function getConfiguration() {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var configSheet = spreadsheet.getSheetByName('Config');
+  
+  if (!configSheet) {
+    return ContentService.createTextOutput(JSON.stringify({
+      error: "Hoja de configuración no encontrada"
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+  
+  var configData = configSheet.getDataRange().getValues();
+  var config = {};
+  
+  // Convertir los datos de configuración a un objeto
+  for (var i = 1; i < configData.length; i++) {
+    if (configData[i][0]) {
+      config[configData[i][0]] = configData[i][1];
+    }
+  }
+  
+  // Obtener datos de cupones si existe la hoja
+  var cuponesSheet = spreadsheet.getSheetByName('Cupones');
+  var cupones = [];
+  
+  if (cuponesSheet) {
+    var cuponesData = cuponesSheet.getDataRange().getValues();
+    var cuponesHeaders = cuponesData[0];
+    
+    for (var i = 1; i < cuponesData.length; i++) {
+      var row = cuponesData[i];
+      if (!row[0]) continue; // Saltar filas vacías
+      
+      cupones.push({
+        codigo: row[0],
+        tipo: row[1], // porcentaje, monto, envio_gratis
+        valor: parseFloat(row[2]) || 0,
+        minimo: parseFloat(row[3]) || 0,
+        activo: row[4] === true || row[4] === "TRUE" || row[4] === "true"
+      });
+    }
+  }
+  
+  // Obtener datos de zonas de envío si existe la hoja
+  var enviosSheet = spreadsheet.getSheetByName('Envios');
+  var zonasEnvio = [];
+  
+  if (enviosSheet) {
+    var enviosData = enviosSheet.getDataRange().getValues();
+    var enviosHeaders = enviosData[0];
+    
+    for (var i = 1; i < enviosData.length; i++) {
+      var row = enviosData[i];
+      if (!row[0]) continue; // Saltar filas vacías
+      
+      zonasEnvio.push({
+        zona: row[0],
+        costo: parseFloat(row[1]) || 0,
+        tiempoEstimado: row[2] || ""
+      });
+    }
+  }
+  
+  return ContentService.createTextOutput(JSON.stringify({
+    config: config,
+    cupones: cupones,
+    zonasEnvio: zonasEnvio
+  })).setMimeType(ContentService.MimeType.JSON);
+}
+
+function recordOrder(e) {
+  try {
+    Logger.log("Recibiendo solicitud de registro de pedido");
+    
+    if (!e.parameter.orderData) {
+      return ContentService.createTextOutput(JSON.stringify({
+        success: false,
+        error: "No se recibieron datos del pedido"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    var orderData = JSON.parse(e.parameter.orderData);
+    Logger.log("Datos del pedido: " + JSON.stringify(orderData));
+    
+    var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    var pedidosSheet = spreadsheet.getSheetByName('Pedidos');
+    
+    // Verificar que la hoja existe
+    if (!pedidosSheet) {
+      return ContentService.createTextOutput(JSON.stringify({
+        success: false,
+        error: "No se encontró la hoja 'Pedidos'"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+    
+    // Usar el ID proporcionado o generar uno
+    var orderId = orderData.id || ('ORD-' + new Date().getTime());
+    
+    // Datos para guardar
+    var rowData = [
+      orderId,
+      new Date(),
+      orderData.nombre || "",
+      orderData.telefono || "",
+      orderData.entrega || "",
+      orderData.direccion || "",
+      orderData.zona || "",
+      orderData.pago || "",
+      orderData.subtotal || 0,
+      orderData.costoEnvio || 0,
+      orderData.impuesto || 0,
+      orderData.descuento || 0,
+      orderData.total || 0,
+      JSON.stringify(orderData.productos || []),
+      orderData.nota || "",
+      "Nuevo"
+    ];
+    
+    // Añadir los datos a la hoja
+    pedidosSheet.appendRow(rowData);
+    
+    // Obtener el número de la última fila (donde se añadió el pedido)
+    var lastRow = pedidosSheet.getLastRow();
+    
+    // Añadir validación de datos a la celda de Estado (columna P) solo para esta fila
+    var estadoRange = pedidosSheet.getRange(lastRow, 16); // P es la columna 16
+    var rule = SpreadsheetApp.newDataValidation()
+      .requireValueInList(['Nuevo', 'Confirmado', 'En preparación', 'En camino', 'Entregado', 'Completado', 'Pendiente de pago', 'Cancelado', 'Reembolsado'], true)
+      .build();
+    estadoRange.setDataValidation(rule);
+    
+    return ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      orderId: orderId
+    })).setMimeType(ContentService.MimeType.JSON);
+    
+  } catch (error) {
+    Logger.log("Error al procesar el pedido: " + error.toString());
+    return ContentService.createTextOutput(JSON.stringify({
+      success: false,
+      error: error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
