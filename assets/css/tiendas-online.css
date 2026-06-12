@@ -2388,6 +2388,9 @@ img{
         grid-template-columns: repeat(3,1fr);
         
     }
+    .footer__link{
+        font-size: 14.5px;
+    }
     
 }
 /* iPad */
