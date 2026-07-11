@@ -6,25 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="title" content="Agencia Digital | Seven Studio">
         <meta name="description" content="Agencia digital especializada en diseño de páginas web, ecommerce, tiendas virtuales, SEO, branding, logotipos, gestión de redes sociales y diseño gráfico en Lima Perú.">
-        <meta name="keywords" content="Diseño web, desarrolo web, diseño gráfico, Ecommerce, tiendas virtuales, branding, redes sociales, ventas, clientes">
-        <meta name="language" content="spanish">
-        <meta name="copyright" content="Agencia Digital Seven Studio">
-        <meta name="author" content="Agencia Seven Studio">
-        <meta name="audience" content="all">
-        <meta property="og:image" content="https://cdn.discordapp.com/attachments/913812207937134593/1168442264624832623/seven-logo.jpg?ex=6551c7a8&is=653f52a8&hm=f58f1b6bda6566bd8ec808c9455dbb88b80f4bba4602e940d4bdaeba061a2e5e&">
-        <meta name="robots" content="index,follow">
-
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVRBJ28PXR"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-BVRBJ28PXR');
-        </script>
         
-
         <!--==================== FAVICON ====================-->
         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png">
 
@@ -35,10 +17,26 @@
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
         
         <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="assets/css/blog.css">
+        <link rel="stylesheet" href="assets/css/main.css">
 
-        <title>Blog De Actualidad | Agencia Seven Studio</title>
-               
+        <title>Blog | Agencia Seven Studio</title>
+        
+        <style>
+            /* Estilos específicos para la lectura del post para garantizar compatibilidad con modo Día/Noche */
+            #post-content h1, #post-content h2, #post-content h3, #post-content h4 {
+                color: var(--title-color);
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+            }
+            #post-content p {
+                color: var(--text-color);
+                margin-bottom: 1.5rem;
+                line-height: 1.8;
+            }
+            #post-content strong {
+                color: var(--title-color);
+            }
+        </style>
     </head>
     <body>
         <span class="loader"></span>
@@ -46,7 +44,6 @@
         <header class="header" id="header">
             <nav class="nav container">
                 <a href="index.html" class="nav__logo" aria-label="Logotipo de la página">
-
                     <svg width="105" height="30" viewBox="0 0 70 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="nav__logo--color" d="M10.7074 15.4811C10.7074 16.2761 10.4889 16.9608 10.0737 17.535C9.65854 18.1092 9.02484 18.5288 8.21632 18.838C7.38594 19.1251 6.40261 19.2797 5.22261 19.2797C4.10816 19.2797 3.14667 19.1251 2.33815 18.7938C1.52963 18.4625 0.939632 18.0871 0.56815 17.6012C0.174815 17.1154 0 16.6516 0 16.1657C0 15.8565 0.131111 15.5694 0.371482 15.3486C0.611853 15.1277 0.91778 15.0173 1.28926 15.0173C1.61704 15.0173 1.87926 15.0835 2.05408 15.2381C2.22889 15.3927 2.40371 15.5915 2.55667 15.8565C2.88445 16.3645 3.25593 16.762 3.71482 17.0049C4.15186 17.27 4.76372 17.3804 5.55038 17.3804C6.18409 17.3804 6.68668 17.2479 7.08002 16.9829C7.47335 16.7178 7.69187 16.4307 7.69187 16.0995C7.69187 15.5915 7.47335 15.2161 7.05817 14.9731C6.64298 14.7302 5.96557 14.5093 5.00409 14.3106C3.93334 14.0676 3.05927 13.8026 2.38186 13.5376C1.70445 13.2726 1.15815 12.8971 0.764817 12.4554C0.349631 12.0137 0.152963 11.4616 0.152963 10.7991C0.152963 10.2248 0.349631 9.67272 0.721113 9.14268C1.0926 8.63473 1.63889 8.21511 2.38186 7.90592C3.10297 7.59673 3.9989 7.44214 5.02594 7.44214C5.83446 7.44214 6.55557 7.53048 7.21113 7.68507C7.86669 7.83967 8.39113 8.06052 8.82817 8.30345C9.26521 8.56847 9.59299 8.85558 9.81151 9.16477C10.03 9.47396 10.1393 9.80523 10.1393 10.0923C10.1393 10.4236 10.03 10.6886 9.7678 10.9095C9.50558 11.1303 9.1778 11.2187 8.74076 11.2187C8.41298 11.2187 8.15076 11.1303 7.93224 10.9537C7.71372 10.777 7.4515 10.534 7.16743 10.1807C6.92705 9.89357 6.64298 9.67272 6.33705 9.49604C6.00927 9.31936 5.57224 9.23102 5.02594 9.23102C4.45779 9.23102 3.9989 9.34145 3.62742 9.5623C3.25593 9.78315 3.05927 10.0703 3.05927 10.4015C3.05927 10.7107 3.19038 10.9537 3.47445 11.1524C3.75853 11.3512 4.13001 11.5058 4.5889 11.6383C5.04779 11.7708 5.70335 11.9254 6.51187 12.1021C7.47335 12.3229 8.28187 12.5879 8.89373 12.8971C9.50558 13.2063 9.96447 13.5597 10.2922 13.9793C10.5545 14.4873 10.7074 14.951 10.7074 15.4811Z" fill="white"/>
                         <path class="nav__logo--color" d="M22.2015 14.09H16.083C16.083 14.7526 16.2359 15.3268 16.52 15.8348C16.8041 16.3427 17.1756 16.7182 17.6344 16.9611C18.0933 17.2261 18.5959 17.3365 19.1641 17.3365C19.5356 17.3365 19.8852 17.2924 20.1911 17.204C20.497 17.1157 20.803 17.0053 21.087 16.8286C21.3711 16.6519 21.6333 16.4752 21.8956 16.2765C22.1359 16.0777 22.4637 15.8127 22.8352 15.4593C22.9882 15.3268 23.2285 15.2606 23.5126 15.2606C23.8404 15.2606 24.1026 15.3489 24.2993 15.5035C24.4959 15.6581 24.6052 15.901 24.6052 16.1881C24.6052 16.4531 24.4959 16.7623 24.2774 17.1157C24.0589 17.4691 23.7311 17.8003 23.2722 18.1316C22.8352 18.4629 22.267 18.7279 21.5896 18.9267C20.9122 19.1475 20.1474 19.2358 19.2515 19.2358C17.2411 19.2358 15.6896 18.7058 14.5752 17.6457C13.4607 16.5857 12.8926 15.1501 12.8926 13.3171C12.8926 12.4558 13.0237 11.6607 13.3078 10.9319C13.5918 10.2031 13.9852 9.56262 14.5096 9.05467C15.0341 8.54671 15.6896 8.1271 16.4544 7.83999C17.2193 7.55289 18.0715 7.42038 19.0111 7.42038C20.2348 7.42038 21.2837 7.66331 22.1578 8.1271C23.0319 8.61297 23.6874 9.23135 24.1245 9.98224C24.5615 10.7331 24.78 11.5061 24.78 12.3012C24.78 13.03 24.5615 13.4938 24.1026 13.7146C23.6437 13.9796 23.01 14.09 22.2015 14.09ZM16.083 12.4337H21.7426C21.677 11.4398 21.3711 10.711 20.8685 10.2031C20.3659 9.71722 19.7104 9.47428 18.9019 9.47428C18.1152 9.47428 17.4815 9.71722 16.9789 10.2252C16.4981 10.7331 16.1922 11.4619 16.083 12.4337Z" fill="white"/>
@@ -84,62 +81,20 @@
                    </svg>
                 </a>
                 
-
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list grid">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">
-                                <i class="uil uil-estate nav__icon"></i> Inicio
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#nosotros" class="nav__link">
-                                <i class="uil uil-user-plus nav__icon"></i></i></i> Nosotros
-                            </a>
-                        </li>
-                        
-                        <li class="nav__item">
-                            <a href="#servicios" class="nav__link">
-                                <i class="uil uil-rocket nav__icon"></i> Servicios
-                            </a>
-                            <ul class="nav__services">
-                                <li>
-                                    <li><a href="paginas-web.html">Páginas Web</a></li>
-                                    <li><a href="tiendas-virtuales.html">Tiendas Virtuales</a></li>
-                                    <li><a href="sistemas-web.html">Sistemas Web</a></li>
-                                    <li><a href="social-media.html">Social Media</a></li>
-                                    
-                                    <li><a href="diseno-y-branding.html">Diseño y Branding</a></li>
-                                    <li><a href="google-ads.html">Google Ads</a></li>
-                                    <li><a href="facebook-ads.html">Facebook Ads</a></li>
-                                   
-                                    <li><a href="hosting-dominio.html">Hosting y Dominio</a></li>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="#portafolio" class="nav__link">
-                                <i class="uil uil-briefcase nav__icon"></i> Proyectos
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contacto" class="nav__link">
-                                <i class="uil uil-envelope-edit nav__icon"></i> Contáctanos
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <span class="nav__link">
-                                <i class="uil uil-comment-alt-chart-lines nav__icon"></i> Blog
-                            </span>
-                        </li>
+                        <li class="nav__item"><a href="index.html#home" class="nav__link">Inicio</a></li>
+                        <li class="nav__item"><a href="index.html#nosotros" class="nav__link">Nosotros</a></li>
+                        <li class="nav__item"><a href="index.html#servicios" class="nav__link">Servicios</a></li>
+                        <li class="nav__item"><a href="index.html#portafolio" class="nav__link">Proyectos</a></li>
+                        <li class="nav__item"><a href="index.html#contacto" class="nav__link">Contáctanos</a></li>
+                        <li class="nav__item"><a href="blog.html" class="nav__link active-link">Blog</a></li>
                     </ul>
                     <i class="uil uil-times nav__close" id="nav-close"></i>
                 </div>
+                
                 <div class="nav__btns">     
-                    <!--=================CHANGE BUTTON=================-->
                     <i class="uil uil-moon change-theme" id="theme-button"></i>
-                    
                     <div class="nav__toggle" id="nav-toggle">
                         <i class="uil uil-apps"></i>
                     </div>
@@ -149,24 +104,27 @@
 
         <!--==================== MAIN ====================-->
         <main class="main">
-            <section class="section" id="blog" style="padding-top: 8rem; min-height: 80vh;">
-                <h2 class="section__title" style="text-align: center;">Nuestro Blog</h2>
-                <span class="section__subtitle" style="text-align: center;">Novedades y actualidad digital</span>
-
-                <div class="container grid" id="blog-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                    <!-- Blog Card Placeholder -->
-                    <div class="blog__card" style="background: var(--container-color); padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid var(--text-color-light); transition: .3s;">
-                        <img src="assets/img/nosotros.webp" alt="Blog Image" style="border-radius: 1rem; margin-bottom: 1rem; width: 100%; height: 200px; object-fit: cover;">
-                        <div class="blog__data">
-                            <span class="blog__date" style="font-size: var(--small-font-size); color: var(--text-color-light); margin-bottom: 0.5rem; display: block;">11 Jul, 2026</span>
-                            <h3 class="blog__title" style="font-size: var(--h3-font-size); margin-bottom: 1rem;">Cómo optimizar tu ecommerce para vender más</h3>
-                            <p class="blog__description" style="font-size: var(--small-font-size); margin-bottom: 1rem;">Descubre las mejores estrategias para mejorar la tasa de conversión en tu tienda virtual y aumentar tus ventas online.</p>
-                            <a href="#" class="button button--flex button--small" style="background: transparent; color: var(--first-color); border: 1px solid var(--first-color);">
-                                Leer más <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
+            <section class="section" id="post-detail" style="padding-top: 8rem; padding-bottom: 5rem; min-height: 80vh;">
+                <!-- Contenedor principal enfocado en la lectura -->
+                <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+                    
+                    <a href="blog.html" class="button button--flex button--small" style="background: transparent; color: var(--first-color); border: 1px solid var(--first-color); margin-bottom: 2rem; display: inline-flex;">
+                        <i class="uil uil-arrow-left button__icon"></i> Volver al blog
+                    </a>
+                    
+                    <h1 id="post-title" style="font-size: var(--h1-font-size); color: var(--title-color); margin-bottom: 1rem; line-height: 1.3;">Cargando artículo...</h1>
+                    
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; color: var(--text-color-light); font-size: var(--small-font-size);">
+                        <span id="post-date"><i class="uil uil-calendar-alt"></i> --/--/----</span>
                     </div>
-                     <!-- End Blog Card Placeholder -->
+
+                    <img id="post-image" src="" alt="" style="width: 100%; max-height: 450px; object-fit: cover; border-radius: 1rem; margin-bottom: 3rem; display: none; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    
+                    <!-- Aquí se renderizará el contenido traído desde Sanity -->
+                    <div id="post-content">
+                        <span class="loader" style="position: relative; margin: 2rem auto; display: block; border-color: var(--first-color) transparent transparent transparent;"></span>
+                    </div>
+                    
                 </div>
             </section>
         </main>
@@ -176,136 +134,14 @@
             <div class="footer__bg">
                 <div class="footer__container container grid">
                     <div>
-                       <a  href="index.html"> <img src="assets/img/seventotal.svg" alt="Logo Seven studio" class="footer__logo" aria-label="Logotipo de la página"> </a>
+                       <a href="index.html"> <img src="assets/img/seventotal.svg" alt="Logo Seven studio" class="footer__logo" aria-label="Logotipo de la página"> </a>
                        <div class="footer__space">
                             <span class="footer__subtitle">Agencia Digital</span>
                         </div>
                     </div>
-
-                    <ul class="footer__links">
-                        <li>
-                            <span class="footer__text-title">Menú</span>
-                            <ul>
-                                
-                                <li>
-                                    <a href="#home" class="footer__link">Inicio</a>
-                                </li>
-                                <li>
-                                    <a href="#nosotros" class="footer__link">Nosotros</a>
-                                </li>
-                                <li>
-                                    <a href="#servicios" class="footer__link">Servicios</a>
-                                </li>
-                                <li>
-                                    <a href="#portafolio" class="footer__link">Proyectos</a>
-                                </li>
-                                <li>
-                                    <a href="#contacto" class="footer__link">Contáctenos</a>
-                                </li>
-                                <li>
-                                    <span class="footer__link">Blog</span>
-                                </li>
-                                
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="footer__text-title">Servicios</span>
-                            <ul>
-                                <li>
-                                    <a href="paginas-web.html" class="footer__link">Paginas Web</a>
-                                </li>
-                                <li>
-                                    <a href="tiendas-online.html" class="footer__link">Tiendas Online</a>
-                                </li>
-                                <li>
-                                    <a href="sistemas-web.html" class="footer__link">Sistemas Web</a>
-                                </li>
-                                <li>
-                                    <a href="catalogos-web.html" class="footer__link">Catálogos Web</a>
-                                </li>
-
-                                <li>
-                                    <a href="carta-digital.html" class="footer__link">Carta Digital</a>
-                                </li>
-                                <li>
-                                    <a href="social-media.html" class="footer__link">Social Media</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="diseno-y-branding.html" class="footer__link">Diseño y Branding</a>
-                                </li>
-                                
-                                <li>
-                                    <a href="hosting-dominio.html" class="footer__link">Hosting y Dominio</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="footer__text-title">Contáctanos</span>
-                            <ul>
-                                <li>
-                                    <a href="tel:+51966130840" class="footer__link">+51 966 130 840</a>
-                                </li>
-                                <li>
-                                    <a href="mailto:info@sevenstudio.pe" target="_blank"  class="footer__link">info@sevenstudio.pe</a>
-                                </li>
-                            
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="footer__text-title">Privacidad</span>
-                            <ul>
-                                <li>
-                                    <a href="#contacto" class="footer__link">Términos y Condiciones</a>
-                                </li>
-                                <li>
-                                    <a href="#contacto" class="footer__link">Política de Privacidad</a>
-                                </li>
-                                
-
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                    <div class="footer__socials">
-                        <a href="https://www.facebook.com/agenciasevenstudio/" target="_blank" class="footer__social" aria-label="Visita nuestra página de facebook">
-                            <i class="uil uil-facebook-f"></i>
-                        </a> 
-                        <a href="https://www.instagram.com/agenciasevenstudio/" target="_blank" class="footer__social" aria-label="Visita nuestra página de instagram">
-                            <i class="uil uil-instagram"></i>
-                        </a>
-                        <!-- <a href="https://api.whatsapp.com/send?phone=966130840" target="_blank" class="footer__social" aria-label="Visita nuestra página de whatsapp">
-                            <i class="uil uil-linkedin"></i>
-                        </a> -->
-                        <a href="https://www.tiktok.com/@sevenstudio.pe?_t=ZM-8u6nllZ1l7G&_r=1"  target="_blank" aria-label="Visita nuestra página de tiktok">
-                            <svg width="24px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                    viewBox="0 0 74.63 94.34" style="enable-background:new 0 0 74.63 94.34;" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:#F92121;}
-                                </style>
-                                <g id="BACKGROUND">
-                                </g>
-                                <g id="OBJECTS">
-                                    <g>
-                                        <g>
-                                            <path class="home__social-icon" fill="#Fff" d="M26.3,41.66v10.5c0,0-11.04-0.9-11.04,9.88c0,10.03,16.61,8.44,16.61-0.45c0-8.89,0-42.29,0-42.29h10.86
-                                                c0,0-0.81,14.54,14.46,14.19v11.3c0,0-9.16,0.01-14.28-4.57v24.6c0,0-2.33,15.26-18.94,15.26S4.66,67.43,4.66,60.69
-                                                C4.66,53.96,9.15,41.66,26.3,41.66z"/>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                            
-                        </a>
-                        
-                    </div>
                 </div>
-
-                <p class="footer__copy"> <a href="#home" class="footer__link-grey">SevenStudio  &#169; Agencial Digital</a>  2026.  Todos los Derechos Reservados.</p>
+                <p class="footer__copy"> <a href="index.html#home" class="footer__link-grey">SevenStudio &#169; Agencia Digital</a> 2026. Todos los Derechos Reservados.</p>
             </div>
-
-            
         </footer>
         
         <!--==================== SCROLL TOP ====================-->
@@ -313,24 +149,11 @@
             <i class="uil uil-whatsapp scrollup__icon"></i>
         </a>
 
-        <!-- ===== MIXITUP FILTER ===== -->
-        <script defer src="assets/js/mixitup.min.js"></script>
-
-        <!--==================== SWIPER JS ====================-->
-        <script defer src="assets/js/swiper-bundle.min.js"></script>
-
-         <!--========== SCROLL REVEAL ==========-->
-         <script defer src="https://unpkg.com/scrollreveal"></script>
-
-          <!--===== GSAP =====-->
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-
-        <!--==================== MAIN JS ====================-->
+        <!-- ===== MAIN JS ===== -->
         <script defer src="assets/js/pages.js"></script>
         
-        <!-- LOGICA DEL CMS SANITY (AQUI CARGARAN LOS POSTS) -->
-        <script defer src="assets/js/blog.js"></script>
-
+        <!-- LOGICA DEL CMS SANITY PARA EL POST INDIVIDUAL -->
+        <script defer src="assets/js/post.js"></script>
         <!-- CHATBOT SCRIPT AQUI -->
     </body>
 </html>
