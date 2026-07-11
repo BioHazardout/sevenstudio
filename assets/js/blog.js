@@ -32,17 +32,20 @@ async function fetchBlogPosts() {
                 
                 // Crear el HTML de la tarjeta
                 const cardHTML = `
-                    <div class="services__card">
+                    <div class="services__card" style="position: relative;">
+                        <!-- Enlace invisible que cubre toda la tarjeta para hacerla clickeable -->
+                        <a href="post.html?slug=${post.slug}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;"></a>
+                        
                         <img src="${post.imageUrl || 'assets/img/nosotros.webp'}" alt="${post.title}" class="services__card-image" loading="lazy" style="height: 200px; width: 100%; object-fit: cover;">
                         <div class="services__card-content">
                             <span style="font-size: var(--small-font-size); color: var(--text-color-light); margin-bottom: 0.5rem; display: block; text-align: center; margin-top: 1rem;">${date}</span>
                             <h2 class="services__card-title" style="margin-bottom: 0.5rem;">${post.title}</h2>
-                            <p class="services__card-description">${post.description || 'Lee más sobre este artículo...'}</p>
-                            <a href="post.html?slug=${post.slug}">
+                            <p class="services__card-description" style="position: relative; z-index: 11;">${post.description || ''}</p>
+                            <div style="margin-top: auto; align-self: center;">
                                 <span class="button button--flex button--small button--link services__button"> Leer Más 
                                     <i class="uil uil-arrow-right button__icon"></i>
                                 </span>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 `;
