@@ -149,11 +149,19 @@
 
         <!--==================== MAIN ====================-->
         <main class="main">
-            <section class="section" id="blog" style="padding-top: 8rem; min-height: 80vh;">
-                <h2 class="section__title" style="text-align: center;">Nuestro Blog</h2>
-                <span class="section__subtitle" style="text-align: center;">Novedades y actualidad digital</span>
+            <!--==================== HERO BLOG ====================-->
+            <section class="home" id="home">
+                <div class="home__overflow" style="height: 40vh; min-height: 300px; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <img src="assets/img/homebg.webp" alt="Fondo Blog Seven Studio" class="home-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+                    <div class="home__container container" style="text-align: center; z-index: 1;">
+                        <h1 style="color: #fff; font-size: var(--biggest-font-size); margin-bottom: 1rem; font-weight: var(--font-bold);">Nuestro Blog</h1>
+                        <span style="color: #fff; font-size: var(--normal-font-size);">Novedades y actualidad digital</span>
+                    </div>
+                </div>
+            </section>
 
-                <div class="container grid" id="blog-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <section class="section" id="blog" style="min-height: 60vh;">
+                <div class="container grid" id="blog-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem;">
                     <!-- Blog Card Placeholder -->
                     <div class="blog__card" style="background: var(--container-color); padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid var(--text-color-light); transition: .3s;">
                         <img src="assets/img/nosotros.webp" alt="Blog Image" style="border-radius: 1rem; margin-bottom: 1rem; width: 100%; height: 200px; object-fit: cover;">
