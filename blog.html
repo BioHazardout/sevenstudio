@@ -150,27 +150,30 @@
         <!--==================== MAIN ====================-->
         <main class="main">
             <!--==================== HERO BLOG ====================-->
-            <section class="home" id="home">
-                <div class="home__overflow" style="height: 40vh; min-height: 300px; display: flex; align-items: center; justify-content: center; position: relative;">
-                    <img src="assets/img/homebg.webp" alt="Fondo Blog Seven Studio" class="home-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-                    <div class="home__container container" style="text-align: center; z-index: 1;">
-                        <h1 style="color: #fff; font-size: var(--biggest-font-size); margin-bottom: 1rem; font-weight: var(--font-bold);">Nuestro Blog</h1>
-                        <span style="color: #fff; font-size: var(--normal-font-size);">Novedades y actualidad digital</span>
-                    </div>
+            <section class="blog-hero" id="home">
+                <div class="blog-hero__overflow">
+                    <img src="assets/img/homebg.webp" alt="Fondo Blog Seven Studio" class="blog-hero__img">
+                </div>
+                <div class="blog-hero__container container">
+                    <h1 class="section__title blog-hero__title">Nuestro Blog</h1>
+                    <span class="section__subtitle blog-hero__subtitle">Novedades y actualidad digital</span>
                 </div>
             </section>
 
             <section class="section" id="blog" style="min-height: 60vh;">
-                <div class="container grid" id="blog-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem;">
+                <!-- Usamos auto-fill para mantener el ancho de columnas aunque haya solo 1 post -->
+                <div class="container grid" id="blog-container" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; margin-top: 1rem;">
                     <!-- Blog Card Placeholder -->
-                    <div class="blog__card" style="background: var(--container-color); padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid var(--text-color-light); transition: .3s;">
-                        <img src="assets/img/nosotros.webp" alt="Blog Image" style="border-radius: 1rem; margin-bottom: 1rem; width: 100%; height: 200px; object-fit: cover;">
-                        <div class="blog__data">
-                            <span class="blog__date" style="font-size: var(--small-font-size); color: var(--text-color-light); margin-bottom: 0.5rem; display: block;">11 Jul, 2026</span>
-                            <h3 class="blog__title" style="font-size: var(--h3-font-size); margin-bottom: 1rem;">Cómo optimizar tu ecommerce para vender más</h3>
-                            <p class="blog__description" style="font-size: var(--small-font-size); margin-bottom: 1rem;">Descubre las mejores estrategias para mejorar la tasa de conversión en tu tienda virtual y aumentar tus ventas online.</p>
-                            <a href="#" class="button button--flex button--small" style="background: transparent; color: var(--first-color); border: 1px solid var(--first-color);">
-                                Leer más <i class="uil uil-arrow-right button__icon"></i>
+                    <div class="services__card">
+                        <img src="assets/img/nosotros.webp" alt="Blog Image" class="services__card-image" loading="lazy" style="height: 200px; width: 100%; object-fit: cover;">
+                        <div class="services__card-content">
+                            <span style="font-size: var(--small-font-size); color: var(--text-color-light); margin-bottom: 0.5rem; display: block; text-align: center; margin-top: 1rem;">11 Jul, 2026</span>
+                            <h2 class="services__card-title" style="margin-bottom: 0.5rem;">Cómo optimizar tu ecommerce para vender más</h2>
+                            <p class="services__card-description">Descubre las mejores estrategias para mejorar la tasa de conversión en tu tienda virtual y aumentar tus ventas online.</p>
+                            <a href="#">
+                                <span class="button button--flex button--small button--link services__button"> Leer Más 
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </span>
                             </a>
                         </div>
                     </div>

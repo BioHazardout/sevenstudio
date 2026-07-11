@@ -32,14 +32,16 @@ async function fetchBlogPosts() {
                 
                 // Crear el HTML de la tarjeta
                 const cardHTML = `
-                    <div class="blog__card" style="background: var(--container-color); padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid var(--text-color-light); transition: .3s;">
-                        <img src="${post.imageUrl || 'assets/img/nosotros.webp'}" alt="${post.title}" style="border-radius: 1rem; margin-bottom: 1rem; width: 100%; height: 200px; object-fit: cover;">
-                        <div class="blog__data">
-                            <span class="blog__date" style="font-size: var(--small-font-size); color: var(--text-color-light); margin-bottom: 0.5rem; display: block;">${date}</span>
-                            <h3 class="blog__title" style="font-size: var(--h3-font-size); margin-bottom: 1rem;">${post.title}</h3>
-                            <p class="blog__description" style="font-size: var(--small-font-size); margin-bottom: 1rem;">${post.description || 'Lee más sobre este artículo...'}</p>
-                            <a href="post.html?slug=${post.slug}" class="button button--flex button--small" style="background: transparent; color: var(--first-color); border: 1px solid var(--first-color);">
-                                Leer más <i class="uil uil-arrow-right button__icon"></i>
+                    <div class="services__card">
+                        <img src="${post.imageUrl || 'assets/img/nosotros.webp'}" alt="${post.title}" class="services__card-image" loading="lazy" style="height: 200px; width: 100%; object-fit: cover;">
+                        <div class="services__card-content">
+                            <span style="font-size: var(--small-font-size); color: var(--text-color-light); margin-bottom: 0.5rem; display: block; text-align: center; margin-top: 1rem;">${date}</span>
+                            <h2 class="services__card-title" style="margin-bottom: 0.5rem;">${post.title}</h2>
+                            <p class="services__card-description">${post.description || 'Lee más sobre este artículo...'}</p>
+                            <a href="post.html?slug=${post.slug}">
+                                <span class="button button--flex button--small button--link services__button"> Leer Más 
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </span>
                             </a>
                         </div>
                     </div>

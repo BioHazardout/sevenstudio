@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
         
         <!--==================== CSS ====================-->
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/blog.css">
 
         <title>Blog | Agencia Seven Studio</title>
         
@@ -105,17 +105,17 @@
         <!--==================== MAIN ====================-->
         <main class="main">
             <!--==================== HERO POST ====================-->
-            <section class="home" id="home">
-                <div class="home__overflow" style="padding-top: 6rem; padding-bottom: 3rem; min-height: 300px; display: flex; align-items: center; justify-content: center; position: relative;">
-                    <img src="assets/img/homebg.webp" alt="Fondo Blog Seven Studio" class="home-img" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
-                    <div class="home__container container" style="text-align: center; z-index: 1; max-width: 800px;">
-                        <a href="blog.html" class="button button--flex button--small" style="background: transparent; color: #fff; border: 1px solid #fff; margin-bottom: 2rem; display: inline-flex; border-radius: 2rem; padding: 0.5rem 1.5rem;">
-                            <i class="uil uil-arrow-left button__icon"></i> Volver al blog
-                        </a>
-                        <h1 id="post-title" style="color: #fff; font-size: var(--h1-font-size); margin-bottom: 1rem; line-height: 1.3; font-weight: var(--font-bold);">Cargando artículo...</h1>
-                        <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; color: rgba(255,255,255,0.8); font-size: var(--small-font-size);">
-                            <span id="post-date"><i class="uil uil-calendar-alt"></i> --/--/----</span>
-                        </div>
+            <section class="blog-hero" id="home">
+                <div class="blog-hero__overflow">
+                    <img src="assets/img/homebg.webp" alt="Fondo Blog Seven Studio" class="blog-hero__img">
+                </div>
+                <div class="blog-hero__container container">
+                    <a href="blog.html" class="button button--flex button--small blog-hero__back">
+                        <i class="uil uil-arrow-left button__icon"></i> Volver al blog
+                    </a>
+                    <h1 id="post-title" class="section__title blog-hero__title blog-hero__title--post">Cargando artículo...</h1>
+                    <div class="blog-hero__meta">
+                        <span id="post-date"><i class="uil uil-calendar-alt"></i> --/--/----</span>
                     </div>
                 </div>
             </section>
