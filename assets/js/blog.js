@@ -3,7 +3,7 @@
 // ============================================
 
 
-const SANITY_PROJECT_ID = 'pzmuujgi'; 
+const SANITY_PROJECT_ID = 'ptbd9rkj'; 
 const SANITY_DATASET = 'production';
 const SANITY_API_VERSION = '2023-05-03'; // Fecha de la API
 
