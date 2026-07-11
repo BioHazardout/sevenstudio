@@ -40,8 +40,10 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
         
-
         <title>Marketing Digital en Lima Perú 🚀 | Agencia Seven Studio</title>
+        
+        <!-- Optimización LCP: Preload Hero Image -->
+        <link rel="preload" href="assets/img/homebg.webp" as="image">
                
     </head>
     <body>
@@ -2347,18 +2349,20 @@
         </a>
 
         <!-- ===== MIXITUP FILTER ===== -->
-        <script src="assets/js/mixitup.min.js"></script>
+        <script defer src="assets/js/mixitup.min.js"></script>
 
         <!--==================== SWIPER JS ====================-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script defer src="assets/js/swiper-bundle.min.js"></script>
 
          <!--========== SCROLL REVEAL ==========-->
-         <script src="https://unpkg.com/scrollreveal"></script>
+         <script defer src="https://unpkg.com/scrollreveal"></script>
 
           <!--===== GSAP =====-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
         <!--==================== MAIN JS ====================-->
-        <script src="assets/js/main.js"></script>
+        <script defer src="assets/js/main.js"></script>
+
+        <!-- CHATBOT SCRIPT AQUI -->
     </body>
 </html>
