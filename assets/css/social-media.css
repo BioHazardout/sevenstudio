@@ -229,6 +229,7 @@ body{
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 h1,h2,h3,h4{
     color: var(--title-color);
@@ -665,6 +666,7 @@ img{
 
 .advantages__img{
     width: 400px;
+    max-width: 100%;
     margin-bottom: 2rem;  
     border-radius: .5rem;
     justify-self: center;
@@ -724,7 +726,7 @@ img{
 }
 .about__img{
     width: 400px;
-    
+    max-width: 100%;
     border-radius: .5rem;
     justify-self: center;
     align-self: center;
@@ -1608,6 +1610,7 @@ img{
         display: none;
     }
     .nav__link,
+    .nav__toggle,
     .change-theme{
         color: var(--logo-color);
         font-size: .85rem;
@@ -1619,7 +1622,7 @@ img{
     }
 
     .nav__logo--color{
-        fill: var(--logo-color);
+        fill: var(--logo-color) !important;
     }
     .nav__services{
         position: flex;
